@@ -49,6 +49,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         }
         String code = RandomUtil.randomNumbers(6);
         log.error("调用服务发送短信验证码：{}", code);
+        // 一次会话一个session, 同一个会话同一个session
         session.setAttribute("code", code);
         return Result.ok();
     }
