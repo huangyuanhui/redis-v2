@@ -99,7 +99,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         }
         String token = UUID.randomUUID().toString(true);
         String key = LOGIN_USER_KEY + token;
-        Map<String, Object> userMap = BeanUtil.beanToMap(user, new HashMap<>(),
+        UserDTO userDTO = BeanUtil.copyProperties(user, UserDTO.class);
+        Map<String, Object> userMap = BeanUtil.beanToMap(userDTO, new HashMap<>(),
                 CopyOptions.create().ignoreNullValue().
                         setFieldValueEditor((fieldName, fieldValue) -> fieldValue.toString())
         );
