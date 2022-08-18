@@ -64,4 +64,5 @@ public class ShopServiceImpl extends ServiceImpl<ShopMapper, Shop> implements IS
         redisTemplate.delete(CACHE_SHOP_KEY + id);
         return Result.ok();
     }
+
 }
