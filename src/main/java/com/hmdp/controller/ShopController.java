@@ -36,6 +36,7 @@ public class ShopController {
         return shopService.queryById(id);
     }
 
+
     /**
      * 新增商铺信息
      * @param shop 商铺数据
